@@ -19,7 +19,7 @@ def date_to_string(date):
     return date.strftime("%Y-%m-%d")
 print(date_to_string.__doc__)
 
-
+# CURRENT MONTH --------------------------------
 def get_first_date_of_current_month():
     '''Returns the first day of this month YYYY-MM-DD as a string.'''
     replace_date = datetime.today().replace(day=1)
@@ -47,18 +47,18 @@ def get_last_date_of_current_month():
 get_last_date_of_current_month()
 date_to_string(get_last_date_of_current_month()) # Convert to a string
 
-#1
+#1 Eliminates use of the calendar package
 def get_last_date_of_current_month():
-    '''ChatGPT version'''
+    '''Returns the last day of this month YYYY-MM-DD as a datetime object'''
     today = datetime.today()
-    last_day = datetime(today.year, today.month, 1) + timedelta(days=32)
-    return last_day.replace(day=1) - timedelta(days=1)
+    last_day_of_this_month = datetime(today.year, today.month, 1) + timedelta(days=32)
+    return last_day_of_this_month.replace(day=1) - timedelta(days=1)
 get_last_date_of_current_month()
 date_to_string(get_last_date_of_current_month())
 
-
+# PRIOR MONTH --------------------------------
 def get_first_date_of_last_month():
-    '''Returns the first day of the prior month YYYY-MM-DD.'''
+    '''Returns the first day of the prior month'''
     d = datetime.today()
     month, year = (d.month-1, d.year) if d.month != 1 else (12, d.year-1)
     first_date = d.replace(day=1, month=month, year=year)
@@ -68,10 +68,17 @@ date_to_string(get_first_date_of_last_month())
 #2
 from dateutil.relativedelta import relativedelta
 def get_first_date_of_last_month():
-    '''ChatGPT version'''
+    '''Returns the first day of the prior month YYYY-MM-DD.'''
     return (datetime.date.today() - relativedelta(months=1)).replace(day=1).strftime('%Y-%m-%d')
 
-  
+# Return object is a datetime object
+from dateutil.relativedelta import relativedelta
+def get_first_date_of_last_month():
+    '''Returns the first day of the prior month YYYY-MM-DD.'''
+    return (datetime.date.today() - relativedelta(months=1)).replace(day=1)
+get_first_date_of_last_month()
+
+
 def get_last_date_of_last_month():
     '''Returns the last day of the prior month YYYY-MM-DD.'''
     current_month = get_last_date_of_current_month()
@@ -83,7 +90,7 @@ date_to_string(get_last_date_of_last_month())
   
 #3
 def get_last_date_of_last_month():
-    '''ChatGPT version'''
+    '''Returns the last day of the prior month YYYY-MM-DD.'''
     today = datetime.today()
     first_day_of_month = datetime(today.year, today.month, 1)
     last_day_of_last_month = first_day_of_month - timedelta(days=2)
