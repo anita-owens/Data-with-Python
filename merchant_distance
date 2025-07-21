@@ -1,0 +1,15 @@
+     -- Adjust the merchant distance for  the last row in the partition
+            case
+                when routes.rn = 1
+                    then
+                        routes.route_merchant_distance_km
+                        + (routes.route_distance_km - routes.sum_route_merchant_distance_km)
+                else routes.route_merchant_distance_km
+            end as route_merchant_distance_km,
+
+
+
+                        -- Calculate the current sum of route_merchant_distance_km per partition
+                        sum(route_merchant_distance_km) over (
+                            partition by route_year, route_week
+                        ) as sum_route_merchant_distance_km,

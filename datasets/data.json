@@ -1,0 +1,26 @@
+{
+    "employees": [
+        {
+            "firstName": "John",
+            "lastName": "Doe",
+            "age": 28,
+            "address": {
+                "street": "123 Main St",
+                "city": "New York",
+                "state": "NY",
+                "zip": "10001"
+            }
+        },
+        {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "age": 32,
+            "address": {
+                "street": "456 Elm St",
+                "city": "Los Angeles",
+                "state": "CA",
+                "zip": "90001"
+            }
+        }
+    ]
+}

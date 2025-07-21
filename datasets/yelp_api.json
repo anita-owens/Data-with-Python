@@ -1,0 +1,48 @@
+{
+  "state": "8uGrNeGuGthaZvfmje8VBQ",
+  "schema": {
+    "businesses": {
+      "primary_key": [
+        "id"
+      ]
+    },
+    "business_category": {}
+  },
+  "insert": {
+    "businesses": [
+      {
+        "id": "8uGrNeGuGthaZvfmje8VBQ",
+        "alias": "5th-element-studios-fleming-island",
+        "name": "5th Element Studios",
+        "image_url": "https://s3-media1.fl.yelpcdn.com/bphoto/tI3CuPc0REnCzkKSgXiT7w/o.jpg",
+        "is_closed": false,
+        "url": "https://www.yelp.com/biz/5th-element-studios-fleming-island?adjust_creative=rdtjBtOkzZQE7_XzbAcBmQ&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=rdtjBtOkzZQE7_XzbAcBmQ",
+        "review_count": 1,
+        "rating": 5,
+        "phone": "+19046447636",
+        "display_phone": "(904) 644-7636",
+        "distance": 36707.40716055929,
+        "address1": "1811 Golden Eagle Way",
+        "address2": "Ste 28",
+        "address3": null,
+        "city": "Fleming Island",
+        "zip_code": "32003",
+        "country": "US",
+        "state": "FL",
+        "latitude": 30.084814,
+        "longitude": -81.712921
+      }
+    ],
+    "business_category": [
+      {
+        "alias": "summer_camps",
+        "id": "8uGrNeGuGthaZvfmje8VBQ"
+      },
+      {
+        "alias": "makerspaces",
+        "id": "8uGrNeGuGthaZvfmje8VBQ"
+      }
+    ]
+  },
+  "hasMore": false
+}
